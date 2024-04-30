@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 28, 2024 lúc 11:23 AM
+-- Thời gian đã tạo: Th4 30, 2024 lúc 10:42 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.0.30
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,7 +46,10 @@ CREATE TABLE `dondathang` (
   `Nguoidathang` varchar(50) NOT NULL,
   `Chedo` int(1) NOT NULL,
   `ngaydathang` date NOT NULL,
-  `ngaythanhtoan` date NOT NULL
+  `ngaythanhtoan` date NOT NULL,
+  `diachi` varchar(100) NOT NULL,
+  `phuongthuc` varchar(30) NOT NULL,
+  `SDT` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -91,43 +94,18 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`MaSanPham`, `TenSP`, `HinhAnh`, `MoTa`, `Gia`, `SoLuong`, `Maloai`) VALUES
+('CV01', 'Chân váy xếp ly cạp thấp', 'cvxepli.jpg', 'Mini', 200000.00, 104, 'CV'),
 ('CV04', 'Chân váy kaki xòe', 'cvxoe.jpg', 'Cơ bản, Hàn Quốc, Tối giản, sexy, Đường phố', 195000.00, 50, 'CV'),
 ('CV05', 'Chân váy kaki chữ A có nút ', 'cvchua.jpg', 'Mini', 195000.00, 28, 'CV'),
+('CVTN0', 'Chân váy xếp ly phom phồng basic', 'cvbasic.jpg', 'Mini', 195000.00, 28, 'CV'),
 ('D02', 'Đầm dây cổ vuông nơ xếp ly ', 'damdaycovuong.jpg', 'Cơ bản, Hàn Quốc, Tối giản, sexy, Đường phố', 385000.00, 47, 'D'),
+('D07', 'Đầm dây hai tầng cúp ngực', 'dam2daybong.jpg', 'váy xòe', 298000.00, 45, 'D'),
+('D13', 'Đầm jean cổ vuông cài khuy', 'damjean.jpg', 'Mini', 195000.00, 240, 'D'),
 ('D14', 'Đầm 2 dây phồng 3 nơ', 'dam2day.jpg', 'Sọc caro', 315000.00, 78, 'D'),
 ('D21', 'Đầm cột dây cổ yếm gắn nơ 2 bên ', 'damno.jpg', 'Đường phố', 385000.00, 120, 'D'),
 ('D24', 'Đầm thun dây đuôi phồng', 'damthundayduoiphong.jpg', 'Cổ chữ V', 355000.00, 232, 'D'),
-('GL03', 'Áo gile nữ dạng vest cài khuy', 'aogile.jpg', 'Hàn Quốc, Tối giản, Retro, Cổ điển', 325000.00, 50, 'GL');
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `taikhoan`
---
-
-CREATE TABLE `taikhoan` (
-  `ID` int(11) NOT NULL,
-  `TenDangNhap` varchar(50) NOT NULL,
-  `MatKhau` varchar(20) NOT NULL,
-  `Quyen` enum('user','admin') NOT NULL,
-  `HoatDong` enum('yes','no') NOT NULL DEFAULT 'yes'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Đang đổ dữ liệu cho bảng `taikhoan`
---
-
-INSERT INTO `taikhoan` (`ID`, `TenDangNhap`, `MatKhau`, `Quyen`, `HoatDong`) VALUES
-(1, 'user1', 'password1', 'user', 'yes'),
-(2, 'user2', 'password2', 'user', 'yes'),
-(3, 'user3', 'password3', 'user', 'yes'),
-(4, 'user4', 'password4', 'user', 'yes'),
-(5, 'user5', 'password5', 'user', 'yes'),
-(6, 'admin1', 'adminpass1', 'admin', 'yes'),
-(7, 'admin2', 'adminpass2', 'admin', 'yes'),
-(8, 'admin3', 'adminpass3', 'admin', 'yes'),
-(9, 'admin4', 'adminpass4', 'admin', 'yes'),
-(10, 'admin5', 'adminpass5', 'admin', 'yes');
+('GL03', 'Áo gile nữ dạng vest cài khuy', 'aogile.jpg', 'Hàn Quốc, Tối giản, Retro, Cổ điển', 325000.00, 50, 'GL'),
+('GL04', 'Áo gile nữ CỔ VUÔNG cài khuy ', 'gile.jpg', 'Denim', 315000.00, 50, 'GL');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -159,12 +137,6 @@ ALTER TABLE `sanpham`
   ADD KEY `fk_maloai` (`Maloai`);
 
 --
--- Chỉ mục cho bảng `taikhoan`
---
-ALTER TABLE `taikhoan`
-  ADD PRIMARY KEY (`ID`);
-
---
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -173,12 +145,6 @@ ALTER TABLE `taikhoan`
 --
 ALTER TABLE `dondathang`
   MODIFY `Sohoadon` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
--- AUTO_INCREMENT cho bảng `taikhoan`
---
-ALTER TABLE `taikhoan`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
