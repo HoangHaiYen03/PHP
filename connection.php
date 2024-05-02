@@ -7,4 +7,5 @@
     if($connect->connect_error){
         echo "Connect Error". $connect->connect_error;
     }
+    echo "thanh cong";
 ?>
