@@ -8,22 +8,22 @@
 <body>
     <div class="container">
         <div class = "row">
-            <?php include "connection.php";
-            if(isset($_POST['Masanpham'])) 
+            <?php include "../../connection.php";
+            if(isset($_GET['Masanpham'])) 
             {
-                $Masp = $_POST['Masanpham'];
+                $Masp = $_GET['Masanpham'];
                 // Nếu có thì sẽ tiến hành hiện form thông tin sản phẩm
-                $select_product = mysqli_query($ocon,"SELECT * FROM sanpham where masp = '$Masp'");
+                $select_product = mysqli_query($connect,"SELECT * FROM sanpham where MaSanPham = '$Masp'");
                 $row = mysqli_fetch_assoc($select_product);
             }
             ?>
             <div class="col-md-6 col-lg-3" style = "padding: 20px 20px; border-radius: 20px">
                 <form action="themspvaogiohang.php" method ="post">
                 <img style="width:200px" >
-                <p><?php echo $row['Tensp'] ?></p>
-                <p>Giá: <?php echo $row['Gia'] ?></p>
-                <?php echo '<img src="'. $row["Hinhanh"] . '" alt="Anh Sanpham">' ?>
-                
+                <p><?php echo $row['TenSP'] ?></p>
+                <p>Giá: <?php echo number_format($row['Gia'], 0, ".", ".")?>đ</p>
+                <img src="../../images/<?php echo $row['HinhAnh'] ?>" alt="">
+                <p><?php echo $row['MoTa'] ?></p>
                 <input type="hidden" name="Tensp" value="$row['Tensp']">
                 <input type="hidden" name="Gia" value = "$row['Gia']"> 
                 <input type="hidden" name="Hinhanh" value="$row['Hinhanh']">

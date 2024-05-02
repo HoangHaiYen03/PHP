@@ -153,6 +153,10 @@
 .row .col-md-3{
     box-shadow: 1px 3px 6px #ccc;   
 }
+h1{
+    text-align: center;
+    
+}
 @media screen and (max-width: 990px){
     .product-grid{ margin-bottom: 30px; }
 }
@@ -162,3 +166,4 @@
         width: 1200px;
     }
 }
+
