@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Chi tiết sản phẩm</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -17,13 +18,18 @@
                 $row = mysqli_fetch_assoc($select_product);
             }
             ?>
-            <div class="col-md-6 col-lg-3" style = "padding: 20px 20px; border-radius: 20px">
+            <div class="col-md-6 col-lg-3 product-container">
+    
+               <div class="product-image">
+                    <img src="../../images/<?php echo $row['HinhAnh'] ?>" alt="">
+               </div>
+    <!-- Thông tin -->
+            <div class="product-info">
                 <form action="themspvaogiohang.php" method ="post">
-                <img style="width:200px" >
-                <p><?php echo $row['TenSP'] ?></p>
-                <p>Giá: <?php echo number_format($row['Gia'], 0, ".", ".")?>đ</p>
-                <img src="../../images/<?php echo $row['HinhAnh'] ?>" alt="">
-                <p><?php echo $row['MoTa'] ?></p>
+                
+                <h1 class ="h1"><?php echo $row['TenSP'] ?></h1>
+                <p class ="p"> Giá: <?php echo number_format($row['Gia'], 0, ".", ".")?>đ</p>
+                <p class="p">Mô tả: <?php echo $row['MoTa'] ?></p>
                 <input type="hidden" name="Tensp" value="$row['Tensp']">
                 <input type="hidden" name="Gia" value = "$row['Gia']"> 
                 <input type="hidden" name="Hinhanh" value="$row['Hinhanh']">
