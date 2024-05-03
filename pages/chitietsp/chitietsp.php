@@ -25,15 +25,18 @@
                </div>
     <!-- Thông tin -->
             <div class="product-info">
-                <form action="themspvaogiohang.php" method ="post">
+                <form action="themspvaogio.php" method ="post">
                 
                 <h1 class ="h1"><?php echo $row['TenSP'] ?></h1>
                 <p class ="p"> Giá: <?php echo number_format($row['Gia'], 0, ".", ".")?>đ</p>
                 <p class="p">Mô tả: <?php echo $row['MoTa'] ?></p>
-                <input type="hidden" name="Tensp" value="$row['Tensp']">
+                <p class="p">Số lượng: <?php echo $row['SoLuong'] ?></p>
+
+                <input type="hidden" name="Tensp" value="$row['TenSP']">
                 <input type="hidden" name="Gia" value = "$row['Gia']"> 
-                <input type="hidden" name="Hinhanh" value="$row['Hinhanh']">
-                <input type="hidden" name="Masp" value="$row['Masp']">
+                <input type="hidden" name="Hinhanh" value="$row['HinhAnh']">
+                <input type="hidden" name="Masp" value="$row['MaSP']">
+                <input type="hidden" name="Soluong"value="$row['SoLuong']">
                 <input type="submit" name="dathang" value="Đặt hàng">
                 </form>
                 </div>
