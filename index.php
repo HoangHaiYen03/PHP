@@ -11,7 +11,7 @@
 </head>
 <body>
     
-    <h1>Trang sản phẩm</h1>
+<div class = "headline"><h2>Sản phẩm bán chạy </h2></div>
     <div class="container">
         <div class="row">
             <?php
@@ -31,7 +31,7 @@
                             <ul class="product-links">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-random"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="pages/chitietsp/themspvaogio.php"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                             <a href="#" class="product-view"><i class="fa fa-search"></i></a>
                         </div>
