@@ -20,7 +20,7 @@
             $result = mysqli_query($connect, $sql);
             while($row = mysqli_fetch_assoc($result)){
             ?>
-            <form>
+            <form>  
                 <div class="col-md-3 col-sm-6">
                     <div class="product-grid">
                         <div class="product-image">
@@ -31,7 +31,11 @@
                             <ul class="product-links">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-random"></i></a></li>
-                                <li><a href="pages/chitietsp/themspvaogio.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li>
+                                    <a href="pages/chitietsp/themspvaogio.php?Masanpham=<?php echo $row['MaSanPham']?>&TenSP=<?php echo $row['TenSP']?>&HinhAnh=<?php echo $row['HinhAnh']?>&Mota=<?php echo $row['MoTa']?>&Gia=<?php echo $row['Gia']?>&Soluong=<?php echo $row['SoLuong']?>&Maloai=<?php echo $row['Maloai']?>">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    </a>
+                                </li>
                             </ul>
                             <a href="#" class="product-view"><i class="fa fa-search"></i></a>
                         </div>
