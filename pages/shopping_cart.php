@@ -2,6 +2,7 @@
     session_start();
     include("../connection.php"); 
     if(isset($_POST['submit'])){
+        $_SESSION['name'] = $_POST['name'];
         $name = $_POST['name'];
         $sdt = $_POST['sdt'];
         $address = $_POST['address'];
@@ -37,7 +38,7 @@
                 $connect->query($sqlInsert);
             }    
         }
-
+        header("location: order-detail.php");
     }
 
 
