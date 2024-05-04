@@ -57,36 +57,24 @@
             margin-left: 10px;
             font-weight: 600;
         }
-        .info-form .delivery label{
-            font-size: 16px;
-            padding: 0 10px;
-            font-weight: 300;
-        }
-        .info-wrapper{
-            display: block;
-        }
-        .info-wrapper .info-text{
-            padding: 15px 10px;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        .info-wrapper input{
-            min-width: 48%;
-            padding: 15px;
-            border-radius: 10px;
-            outline: none;
-            border: 1px solid #e5e7eb;
-        }
-        .info-wrapper input:nth-child(3){
-            margin-left: 38px;
-        }
-        .info-wrapper input:last-child{
-            width: 100%;
-            margin-top: 10px;
-        }
         .mb{
             margin-bottom: 20px;
             padding: 10px;
+        }
+        .order-info{
+            padding: 10px;
+        }
+        .order-info div{
+            display: block;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            color: #31708f;
+        }
+        .order-info div span{
+            color: #000;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -99,7 +87,7 @@
                 <div class="col-md-12">
                     <ol class="breadcrumb">
                         <li><a href="#">Home</a></li>
-                        <li class="active">Cart</li>
+                        <li class="active">Orders</li>
                     </ol>
                 </div>
             </div>
@@ -109,7 +97,7 @@
                         <div class="panel-heading">
                             <h3>
                                 <!-- <img class="img-circle img-thumbnail" src="https://bootdey.com/img/Content/user_3.jpg"> -->
-                                Giỏ hàng của bạn
+                                Đơn đặt hàng : #0001
                             </h3>
                         </div>
                         <div class="panel-body">
@@ -121,7 +109,7 @@
                                             <th>Tên sản phẩm</th>
                                             <th>Số lượng</th>
                                             <th>Giá</th>
-                                            <th>Tổng tiền</th>
+                                            <th>Tạm tính</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -132,13 +120,7 @@
                                                 <p>Size : 26</p>
                                             </td>
                                             <td>
-                                                <form class="form-inline">
-                                                    <input class="form-control" type="number" value="1" min="1">
-                                                    <button rel="tooltip" class="btn btn-default"><i
-                                                            class="fa fa-pencil"></i></button>
-                                                    <a href="#" class="btn btn-primary"><i
-                                                            class="fa fa-trash-o"></i></a>
-                                                </form>
+                                                1
                                             </td>
                                             <td>$54.00</td>
                                             <td>$54.00</td>
@@ -150,13 +132,7 @@
                                                 <p>Size : M</p>
                                             </td>
                                             <td>
-                                                <form class="form-inline">
-                                                    <input class="form-control" type="number" value="1" min="1">
-                                                    <button class="btn btn-default"><i
-                                                            class="fa fa-pencil"></i></button>
-                                                    <a href="#" class="btn btn-primary" rel="tooltip"><i
-                                                            class="fa fa-trash-o"></i></a>
-                                                </form>
+                                                1
                                             </td>
                                             <td>$16.00</td>
                                             <td>$32.00</td>
@@ -168,13 +144,7 @@
                                                 <p>Size : M</p>
                                             </td>
                                             <td>
-                                                <form class="form-inline">
-                                                    <input class="form-control" type="number" value="1" min="1">
-                                                    <button class="btn btn-default"><i
-                                                            class="fa fa-pencil"></i></button>
-                                                    <a href="#" class="btn btn-primary" rel="tooltip"><i
-                                                            class="fa fa-trash-o"></i></a>
-                                                </form>
+                                                2
                                             </td>
                                             <td>$16.00</td>
                                             <td>$32.00</td>
@@ -188,32 +158,18 @@
                                             <td>3</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="4" class="text-right"><strong>Tổng tiền: </strong></td>
-                                            <td style="color: rgb(226, 16, 16); font-weight: bold;">$88.00</td>
+                                            <td colspan="4" class="text-right"><strong>Tổng thanh toán: </strong></td>
+                                            <td style="color: red;">$88.00</td>
                                         </tr>
                                     </tbody>
                                 </table>
-
-                                <form action="" class="info-form">
-                                    <div class="delivery-wrapper">
-                                        <div class="method"><i class="fa-solid fa-box" style="font-size: 20px;color: #428bca;"></i><h4>Chọn hình thức nhận hàng</h4></div>
-                                        <div style="display: flex;">
-                                            <div class="delivery">
-                                                <label for="delivery1"><input type="radio" id="delivery1" name="delivery"> Giao hàng tận nơi</label>
-                                            </div>
-                                            <div class="delivery">
-                                                <label for="delivery2"><input type="radio" id="delivery2" name="delivery" checked> Giao hàng tại nhà</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="info-wrapper">
-                                        <div class="info-text">Thông tin người đặt</div>
-                                        <input type="text" name = "name" placeholder="Nhập họ tên">
-                                        <input type="text" name = "sdt" placeholder="Nhập số điện thoại">
-                                        <input type="text" name = "address" placeholder="Nhập địa chỉ">
-                                    </div>
-
-                                </form>
+                                <div class="order-info">
+                                    <div>Ngày đặt hàng : <span>2/5/2024</span></div>
+                                    <div>Họ tên người đặt : <span>Hoàng Hải Yến</span></div>
+                                    <div>Số điện thoại : <span>(+84) 988 956 280</span></div>
+                                    <div>Địa chỉ: <span>Số 6, Ngách 293/53 Tam Trinh, Phường Hoàng Văn Thụ, Quận Hoàng Mai, Hà Nội</span></div>
+                                    <div>Hình thức nhận hàng : <span>Nhận hàng tại nhà</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -233,3 +189,10 @@
 </body>
 
 </html>
+
+
+
+
+
+
+

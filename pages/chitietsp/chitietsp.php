@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chi tiết sản phẩm</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
     <div class="container">
@@ -32,11 +32,10 @@
                 <p class="p">Mô tả: <?php echo $row['MoTa'] ?></p>
                 <p class="p">Số lượng: <?php echo $row['SoLuong'] ?></p>
 
-                <input type="hidden" name="Tensp" value="$row['TenSP']">
-                <input type="hidden" name="Gia" value = "$row['Gia']"> 
-                <input type="hidden" name="Hinhanh" value="$row['HinhAnh']">
-                <input type="hidden" name="Masp" value="$row['MaSP']">
-                <input type="hidden" name="Soluong"value="$row['SoLuong']">
+                <input type="hidden" name="Tensp" value="<?= $row['TenSP'] ?>">
+                <input type="hidden" name="Gia" value = "<?= $row['Gia'] ?>"> 
+                <input type="hidden" name="Hinhanh" value="<?= $row['HinhAnh'] ?>">
+                <input type="hidden" name="Masp" value="<?= $row['MaSanPham'] ?>">
                 <input type="submit" name="dathang" value="Đặt hàng">
                 </form>
                 </div>
@@ -45,10 +44,7 @@
 </body>
 </html>
 <?php
-//Luồng 1: Nguoi dung ấn vào sản phẩm thì lấy mã sản phẩm gửi sang trang chi tiết sau đó truy vấn trong bảng sản phẩm để hiển thị giao diện ra
-// nhận mã sp từ form
-// $Masp = $_POST['Masanpham']; 
-// SELECT * FROM sanpham WHERE masp = $Masp;
+
 
 
  
