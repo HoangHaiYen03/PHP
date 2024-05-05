@@ -1,0 +1,137 @@
+body{
+    background-color: #edf1f5;
+    margin-top:20px;
+}
+.card {
+    margin-bottom: 30px;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid transparent;
+    border-radius: 0;
+}
+.card .card-subtitle {
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #8898aa;
+}
+.table-product.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f3f8fa!important
+}
+.table-product td{
+    border-top: 0px solid #dee2e6 !important;
+    color: #728299!important;
+}
+.large-button {
+    font-size: 16px; /* Điều chỉnh kích thước chữ */
+    padding: 10px 20px; /* Điều chỉnh khoảng cách giữa nút và nội dung bên trong */
+    border-radius: 8px; /* Bo góc nút */
+    background-color: #288ed6; /* Màu nền của nút */
+    color: #FFFFFF; /* Màu chữ trắng */
+}
+
+.product-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Chiều cao của container sẽ bằng chiều cao của viewport */
+    font-family: 'Open Sans',sans-serif;
+}
+.product-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* Màu của khung mờ */
+    filter: blur(10px); /* Độ mờ của khung mờ */
+    z-index: -1; /* Đặt khung mờ phía dưới các phần tử khác */
+}
+.product-content {
+    display: flex;
+    align-items: center;
+}
+.product-image{
+    position: relative;
+}
+.product-image img {
+    width: 400px;
+    height: 400px; /* Đặt chiều cao */
+    object-fit: cover; /* Cắt ảnh để giữ tỷ lệ */
+    transition: transform 0.3 ease, box-shadow 0.3s ease; /* Tạo hiệu ứng chuyển đổi mềm mại */
+    border: 5px solid transparent; /* Tạo viền trong suốt */
+    display: block; /* Để loại bỏ khoảng trống dư thừa xung quanh ảnh */
+    max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước của container */
+    
+}
+
+.product-image img:hover {
+    transform: scale(1.2) perspective(500px);  /* Phóng to ảnh lên 200% khi hover */
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.981), 0 0 30px 10px rgba(209, 205, 208, 0.7); /* Tạo viền lấp lánh với màu blue */
+    
+}
+
+.product-info {
+    
+    margin-left: 100px;
+    margin-top: 0px;
+    
+    
+}
+.product-container .product-info {
+    position: relative;
+}
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+    }
+    .product-content {
+        flex-direction: column;
+    }
+    .product-info {
+        margin-left: 0; /* Xóa margin trái */
+        margin-top: 20px; /* Thêm margin phía trên */
+    }
+}
+h1 {
+    font-size: 36px;
+    transition: filter 0.3s ease; /* Tạo hiệu ứng chuyển đổi mềm mại */
+}
+h2{
+    font-family: 'Open Sans',sans-serif;
+    margin-left: 300px;
+    margin-right: 300px;
+    align-items: center;
+
+}
+h3{
+    font-family: 'Open Sans',sans-serif;
+}
+
+h1:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Tạo hiệu ứng shadow khi hover */
+}
+
+
+.p{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.83);
+    
+}
+.td{
+    font-size: 20px;
+}
+
+.table-responsive{
+    margin-left: 300px;
+    margin-right: 300px;
+
+}
+
