@@ -11,7 +11,7 @@
 </head>
 <body>
     
-<div class = "headline"><h2>Sản phẩm bán chạy </h2></div>
+<div class = "headline"><h2>Trang sản phẩm</h2></div>
     <div class="container">
         <div class="row">
             <?php
@@ -20,7 +20,7 @@
             $result = mysqli_query($connect, $sql);
             while($row = mysqli_fetch_assoc($result)){
             ?>
-            <form>  
+            <form action = "xulygiohang.php" method = "post">  
                 <div class="col-md-3 col-sm-6">
                     <div class="product-grid">
                         <div class="product-image">
@@ -32,7 +32,7 @@
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-random"></i></a></li>
                                 <li>
-                                    <a href="pages/chitietsp/themspvaogio.php?Masanpham=<?php echo $row['MaSanPham']?>&TenSP=<?php echo $row['TenSP']?>&HinhAnh=<?php echo $row['HinhAnh']?>&Mota=<?php echo $row['MoTa']?>&Gia=<?php echo $row['Gia']?>&Soluong=<?php echo $row['SoLuong']?>&Maloai=<?php echo $row['Maloai']?>">
+                                    <a href="pages/chitietsp/themspvaogio.php?Masanpham=<?php echo $row['MaSanPham']?>&TenSP=<?php echo $row['TenSP']?>&HinhAnh=<?php echo $row['HinhAnh']?>&Mota=<?php echo $row['MoTa']?>&Gia=<?php echo $row['Gia']?>&Soluong=<?php echo 1?>&Maloai=<?php echo $row['Maloai']?>">
                                     <i class="fa fa-shopping-cart"></i>
                                     </a>
                                 </li>
@@ -45,8 +45,8 @@
                                 <li class="fas fa-star"></li>
                                 <li class="fas fa-star"></li>
                                 <li class="fas fa-star"></li>
-                                <li class="fas fa-star disable"></li>
-                                <li class="disable">(1 reviews)</li>
+                                <li class="fas fa-star"></li>
+                                <li class="disable">(50 reviews)</li>
                             </ul>
                             <h3 class="title"><a href="./pages/chitietsp/chitietsp.php?Masanpham=<?php echo $row['MaSanPham'] ?>"> <?php echo $row['TenSP']?></a></h3>
                             <div class="price"> <?php echo number_format($row['Gia'], 0, ".", ".")?>đ</div>
