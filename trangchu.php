@@ -12,6 +12,9 @@
 <body>
     
 <div class = "headline"><h2>Trang sản phẩm</h2></div>
+    <div class ="cart">
+        <a href="./pages/shopping_cart.php"><i class="fa-solid fa-cart-shopping"></i>Giỏ hàng</a>
+    </div>
     <div class="container">
         <div class="row">
             <?php

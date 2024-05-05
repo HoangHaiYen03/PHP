@@ -169,6 +169,23 @@ h2{
     margin: 100px auto;
     width: 1400px;
 }
+.cart{
+    position: relative;
+    display: block;
+    float: right;
+    right: 33px;
+    bottom: 6px;
+    padding: 10px;
+    border: 1px solid bisque;
+}
+.cart:hover{
+    background-color: bisque;
+}
+.cart a{
+    font-size: 18px;
+    text-decoration: none;
+    color: #555;
+}
 .col-md-3 {
     width: 23%;
     margin-left: 20px;
