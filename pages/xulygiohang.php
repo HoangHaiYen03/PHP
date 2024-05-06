@@ -13,12 +13,12 @@ if(isset($_POST['delete'])){
 }
 
 if(isset($_POST['update'])){
-    $masp_to_update = $_POST['update'];
-    $new_quantity = $_POST['quantity'];
-    foreach($_SESSION['cart'] as &$product){
-        if($product[0] == $masp_to_update){
-            $product[4] = $new_quantity;
-            break;
+    foreach($_POST['quantity'] as $masp_to_update => $new_quantity){
+        foreach($_SESSION['cart'] as &$product){
+            if($product[0] == $masp_to_update){
+                $product[4] = $new_quantity;
+                break;
+            }
         }
     }
 }

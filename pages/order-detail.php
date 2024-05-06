@@ -164,6 +164,21 @@
                                                 echo '<tr><td colspan="5">Giỏ hàng trống</td></tr>';
                                             }
                                             ?>
+                                            <tr>
+                                                <td colspan="6" style="line-height: 0; background-color: #ccc; padding: 0.3px;">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4" class="text-right">Tổng sản phẩm: </td>
+                                                <td><?= $total_products ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4" class="text-right">Tổng số lượng: </td>
+                                                <td><?= $total_quantity ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4" class="text-right"><strong>Tổng tiền: </strong></td>
+                                                <td style="color: rgb(226, 16, 16); font-weight: bold;"><?= number_format($total_price, 0, ".", ".") ?>đ</td>
+                                            </tr>
                                     </tbody>
                                 </table>
                                 <div class="order-info">

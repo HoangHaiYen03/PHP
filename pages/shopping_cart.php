@@ -200,14 +200,14 @@
                                                 <td><strong><?= $tensp ?></strong></td>
                                                 <td>
                                                     <div class="form-inline">
-                                                        <input class="form-control" type="number" value="<?= $soluong ?>" min="1" name = "quantity">
+                                                        <input class="form-control" type="number" value="<?= $soluong ?>" min="1" name="quantity[<?= $masp ?>]">
                                                         <button type="submit" name="update" value="<?= $masp ?>" class="btn btn-default"><i class="fa fa-pencil"></i></button>
                                                         <button type="submit" name="delete" value="<?= $masp ?>" class="btn btn-primary"><i class="fa fa-trash-o"></i></button>
                                                     </div>
                                                 </td>
                                                 <td><?= number_format((int)$gia, 0, ".", ".") ?>đ</td>
                                                 <td><?= number_format($product_total_price, 0, ".", ".") ?>đ</td>
-                                            </tr>
+                                            </tr> 
                                             <?php
                                                 }
                                             } else {
