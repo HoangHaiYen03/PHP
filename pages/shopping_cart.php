@@ -15,7 +15,7 @@
             $row_giohang=$result->fetch_assoc();
             $sohoadon=$row_giohang["Sohoadon"];
         }else{
-            $sqlInsert="INSERT INTO dondathang(Nguoidathang,Chedo,diachi,phuongthuc,SDT) values ('$name',0, '$address', '$delivery','$sdt')";
+            $sqlInsert="INSERT INTO dondathang(Nguoidathang, Chedo, diachi, phuongthuc, SDT) values ('$name',0, '$address', '$delivery','$sdt')";
             if($connect->query($sqlInsert)===TRUE){
                 $sql_giohang="SELECT * FROM dondathang WHERE Nguoidathang ='$name' and Chedo=0";
                 $result_giohang=$connect->query($sql_giohang); 
@@ -155,7 +155,6 @@
                         
                         <div class="panel-heading">
                             <h3>
-                                <!-- <img class="img-circle img-thumbnail" src="https://bootdey.com/img/Content/user_3.jpg"> -->
                                 Giỏ hàng của bạn
                             </h3>
                         </div>

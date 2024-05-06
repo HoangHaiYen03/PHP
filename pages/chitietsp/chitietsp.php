@@ -38,11 +38,11 @@
                 <p class="p">Mô tả: <?php echo $row['MoTa'] ?></p>
                 <p class="p">Số lượng: <?php echo $row['SoLuong'] ?></p>
 
-                <input type="hidden" name="Tensp" value="$row['TenSP']">
-                <input type="hidden" name="Gia" value = "$row['Gia']"> 
-                <input type="hidden" name="Hinhanh" value="$row['HinhAnh']">
-                <input type="hidden" name="Masp" value="$row['MaSP']">
-                <input type="hidden" name="Soluong"value="$row['SoLuong']">
+                <input type="hidden" name="Tensp" value="<?=$row['TenSP']?>">
+                <input type="hidden" name="Gia" value = "<?=$row['Gia']?>"> 
+                <input type="hidden" name="Hinhanh" value="<?=$row['HinhAnh']?>">
+                <input type="hidden" name="Masp" value="<?=$row['MaSanPham']?>">
+                <input type="hidden" name="Soluong"value="<?=$row['SoLuong']?>">
                 <input type="submit" name="dathang" value="Đặt hàng" class="large-button">
                 </form>
                 <h3 class="box-title mt-5">Điểm nổi bật chính</h3>
