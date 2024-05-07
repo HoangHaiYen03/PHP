@@ -23,7 +23,6 @@
             $result = mysqli_query($connect, $sql);
             while($row = mysqli_fetch_assoc($result)){
             ?>
-            <form action = "xulygiohang.php" method = "post">  
                 <div class="col-md-3 col-sm-6">
                     <div class="product-grid">
                         <div class="product-image">
@@ -56,7 +55,6 @@
                             
                         </div>
                     </div>
-            </form>
             </div>
 <?php } ?>
 

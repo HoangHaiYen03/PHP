@@ -24,7 +24,7 @@
             }
         }
         foreach($_SESSION['cart'] as $key => $products){
-            $masp = $products[0];
+            $masp = $products[0]; 
             $hinhanh = $products[1];
             $tensp = $products[2];
             $gia = $products[3];
@@ -32,16 +32,18 @@
             $ktra = "SELECT * FROM `chitietdonhang` WHERE Sohoadon = '$sohoadon' and mahang = '$masp'";
             $result_ktra=$connect->query($ktra);
             if($result_ktra->num_rows > 0){
-
+                $row = $result_ktra->fetch_assoc();
+                $soluong_cu = $row['soluong'];
+                $soluong_moi = $soluong_cu + $soluong;
+                $update_query = "UPDATE chitietdonhang SET soluong = '$soluong_moi' WHERE Sohoadon = '$sohoadon' AND mahang = '$masp'";
+                $connect->query($update_query);
             }else{
                 $sqlInsert="INSERT INTO chitietdonhang values('$sohoadon','$masp','$soluong','$gia')";
                 $connect->query($sqlInsert);
-            }    
+            }
         }
         header("location: order-detail.php");
     }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -205,7 +207,7 @@
                                                         <button type="submit" name="delete" value="<?= $masp ?>" class="btn btn-primary"><i class="fa fa-trash-o"></i></button>
                                                     </div>
                                                 </td>
-                                                <td><?= number_format((int)$gia, 0, ".", ".") ?>đ</td>
+                                                <td><?= number_format($gia, 0, ".", ".") ?>đ</td>
                                                 <td><?= number_format($product_total_price, 0, ".", ".") ?>đ</td>
                                             </tr> 
                                             <?php

@@ -103,7 +103,7 @@
                                 $nguoidat = $_SESSION['name'];
                                 $sql = "SELECT * FROM dondathang WHERE Nguoidathang = '$nguoidat'";
                                 $result = mysqli_query($connect, $sql);
-                                $row = $result->fetch_assoc();
+                                $row = $result->fetch_assoc(); 
                                 
                              ?>
                             <h3>
